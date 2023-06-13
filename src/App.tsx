@@ -16,9 +16,6 @@ export type Produto = {
 }
 
 function App() {
-  //const [produtos, setProdutos] = useState<Produto[]>([])
-  //const [carrinho, setCarrinho] = useState<Produto[]>([])
-  //const [favoritos, setFavoritos] = useState<Produto[]>([])
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -26,15 +23,6 @@ function App() {
       .then((res) => res.json())
       .then((res) => dispatch(setProdutos(res)))
   }, [])
-
-  //function favoritar(produto: Produto) {
-  //  if (favoritos.find((p) => p.id === produto.id)) {
-  //    const favoritosSemProduto = favoritos.filter((p) => p.id !== produto.id)
-  //    setFavoritos(favoritosSemProduto)
-  //  } else {
-  //    setFavoritos([...favoritos, produto])
-  //  }
-  //}
 
   return (
     <Provider store={store}>
